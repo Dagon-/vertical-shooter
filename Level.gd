@@ -22,5 +22,4 @@ func _process(delta):
 		# If the node is behind the player move it to the top
 		if node.position.y > bg_lenght:
 			node.position.y -= bg_lenght * 3
-			#node.rotate(3.1415926536)
-			
+
