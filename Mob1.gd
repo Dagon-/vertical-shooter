@@ -1,14 +1,15 @@
 extends Area2D
 
-var max_speed = 100
-var spawn_area #= Vector2(0, 0)
-var screen_size #= Vector2(0, 0)
+var max_speed = 150
+var screen_size
+var rng = RandomNumberGenerator.new()
 
 
 func _ready():
-	randomize()
+	rng.randomize()
 	screen_size = get_viewport_rect().size
-	spawn_area = Vector2(10, screen_size.x - 10)
+	# Make sure the mobs spawn fully inside the viewport
+	var spawn_area = Vector2(40, screen_size.x - 40)
 	$AnimatedSprite.playing = true
 	select_path(spawn_area)
 	
@@ -16,8 +17,7 @@ func _process(delta):
 	position.y += max_speed * delta
 
 func select_path(spawn_area):
-	position.x = randi()%int(spawn_area.y)+int(spawn_area.x)
-
-
+	position.x = rng.randi_range(spawn_area.x, spawn_area.y)
+#
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
