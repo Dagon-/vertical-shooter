@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://animation/smallfighter0006.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://animation/16.png" type="Texture" id=34]
 [ext_resource path="res://animation/23.png" type="Texture" id=35]
 [ext_resource path="res://animation/24.png" type="Texture" id=36]
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -59,18 +60,31 @@ animations = [ {
 radius = 10.7365
 height = 91.6041
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" groups=[
+"player",
+]]
+collision_layer = 16
+collision_mask = 14
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+Projectile = ExtResource( 37 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "left"
 speed_scale = 2.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="Hardpoint1" type="Position2D" parent="."]
+position = Vector2( -18, 0 )
+
+[node name="Hardpoint2" type="Position2D" parent="."]
+position = Vector2( 18, 0 )
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

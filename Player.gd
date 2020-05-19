@@ -1,8 +1,9 @@
 extends Area2D
 
 export var speed = 400  # How fast the player will move (pixels/sec).
-var screen_size  # Size of the game window.
+export (PackedScene) var Projectile
 
+var screen_size  # Size of the game window.
 signal PlayerDestroyed
 
 
@@ -33,6 +34,9 @@ func _process(delta):
 	# Up
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+	# Primary fire
+	if Input.is_action_just_pressed("fire_primary"):
+		fire_primary_weapon()
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -42,8 +46,7 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 
-func _on_Player_area_entered(area):
-	# Disable collions
+func _on_Player_area_entered(area):		
 	$CollisionShape2D.set_deferred("disabled", true)
 
 	# Stop processing in _process.
@@ -54,4 +57,12 @@ func _on_Player_area_entered(area):
 	$AnimatedSprite.play()
 	
 	emit_signal("PlayerDestroyed")
-	#queue_free()
+
+
+func fire_primary_weapon():
+	var i = Projectile.instance()
+	# Add the projectile as an instance of Players
+	# owner (Main) so it owns the movement
+	owner.add_child(i)
+	i.transform = $Hardpoint1.global_transform
+
