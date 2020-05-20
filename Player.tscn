@@ -36,7 +36,8 @@
 [ext_resource path="res://animation/16.png" type="Texture" id=34]
 [ext_resource path="res://animation/23.png" type="Texture" id=35]
 [ext_resource path="res://animation/24.png" type="Texture" id=36]
-[ext_resource path="res://Projectile.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scenes/weapon_blaster.tscn" type="PackedScene" id=37]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

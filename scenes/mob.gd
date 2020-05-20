@@ -16,14 +16,15 @@ func _ready():
 func _process(delta):
 	position.y += max_speed * delta
 
+# Pick a random point at the top of the screen
 func select_spawn(spawn_area):
 	position.x = rng.randi_range(spawn_area.x, spawn_area.y)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-func _on_Mob1_area_entered(area):
-	# Disable collions
+func _on_Mob_area_entered(area):
+	# Disable collisions
 	$CollisionShape2D.set_deferred("disabled", true)
 
 	# Stop processing in _process. 

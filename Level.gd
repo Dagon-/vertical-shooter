@@ -16,7 +16,7 @@ func _ready():
 			backgrounds.append(node)
 
 	# Load sauser mob
-	Mob1 = load("res://Mob1.tscn")
+	Mob1 = load("res://scenes/mob_saucer.tscn")
 	
 func _process(delta):
 
@@ -26,7 +26,6 @@ func _process(delta):
 		# If the node is behind the player move it to the top
 		if node.position.y > bg_lenght:
 			node.position.y -= bg_lenght * 3
-
 
 func _on_MobTimer_timeout():
 	var saucer = Mob1.instance()
