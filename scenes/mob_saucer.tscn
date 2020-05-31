@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/mob.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/mob_saucer.gd" type="Script" id=2]
@@ -26,45 +26,33 @@
 [ext_resource path="res://animation/10.png" type="Texture" id=24]
 [ext_resource path="res://animation/23.png" type="Texture" id=25]
 [ext_resource path="res://animation/24.png" type="Texture" id=26]
-[ext_resource path="res://animation/alien10003.png" type="Texture" id=27]
-[ext_resource path="res://animation/alien10004.png" type="Texture" id=28]
-[ext_resource path="res://animation/alien10001.png" type="Texture" id=29]
-[ext_resource path="res://animation/alien10006.png" type="Texture" id=30]
-[ext_resource path="res://animation/alien10008.png" type="Texture" id=31]
-[ext_resource path="res://animation/alien10005.png" type="Texture" id=32]
-[ext_resource path="res://animation/alien10007.png" type="Texture" id=33]
-[ext_resource path="res://animation/alien10009.png" type="Texture" id=34]
-[ext_resource path="res://animation/alien10010.png" type="Texture" id=35]
-[ext_resource path="res://animation/alien10012.png" type="Texture" id=36]
-[ext_resource path="res://animation/alien10013.png" type="Texture" id=37]
-[ext_resource path="res://animation/alien10011.png" type="Texture" id=38]
-[ext_resource path="res://animation/alien10015.png" type="Texture" id=39]
-[ext_resource path="res://animation/alien10014.png" type="Texture" id=40]
-[ext_resource path="res://animation/alien10002.png" type="Texture" id=41]
+[ext_resource path="res://sprites/medfighter.png" type="Texture" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 29 ), ExtResource( 41 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "saucer",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 7 ), ExtResource( 25 ), ExtResource( 26 ), null ],
 "loop": false,
 "name": "explode",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "ship",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 30.4618
 
 [node name="Mob_Saucer" instance=ExtResource( 1 )]
+scale = Vector2( 0.6, 0.8 )
 collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
-animation = "saucer"
+animation = "ship"
+flip_v = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 2 )
