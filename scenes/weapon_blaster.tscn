@@ -2,12 +2,11 @@
 
 [ext_resource path="res://scenes/weapon_blaster.gd" type="Script" id=1]
 [ext_resource path="res://scenes/weapon.tscn" type="PackedScene" id=2]
-[ext_resource path="res://animation/laserRed01.png" type="Texture" id=3]
-
+[ext_resource path="res://sprites/purple.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.03064
-height = 44.879
+height = 41.3392
 
 [node name="Blaster" instance=ExtResource( 2 )]
 collision_layer = 32
