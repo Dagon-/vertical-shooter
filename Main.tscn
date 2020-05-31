@@ -6,7 +6,6 @@
 [node name="Main" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource( 1 )]
-position = Vector2( -24.6132, 225.035 )
 
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 519.758, 649.055 )

@@ -14,7 +14,7 @@ func _ready():
 	select_spawn(spawn_area)
 	
 func _process(delta):
-	position.y += max_speed * delta
+	movement(delta)
 
 # Pick a random point at the top of the screen
 func select_spawn(spawn_area):
@@ -32,7 +32,11 @@ func _on_Mob_area_entered(area):
 
 	$AnimatedSprite.animation = "explode"
 	$AnimatedSprite.play()
+	# Give animation a chance to play
 	$DespawnTimer.start()
 
 func _on_DespawnTimer_timeout():
 	queue_free()
+
+func movement(delta):
+	position.y += max_speed * delta

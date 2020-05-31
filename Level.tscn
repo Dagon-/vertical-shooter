@@ -20,7 +20,7 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Sprite_middle" type="Sprite" parent="middle_layer"]
-position = Vector2( 688, -416 )
+position = Vector2( 688, -538 )
 texture = ExtResource( 2 )
 
 [node name="MobTimer" type="Timer" parent="."]
