@@ -38,7 +38,6 @@
 [ext_resource path="res://animation/24.png" type="Texture" id=36]
 [ext_resource path="res://scenes/weapon_blaster.tscn" type="PackedScene" id=37]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 3 ) ],
