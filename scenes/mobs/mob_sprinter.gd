@@ -1,4 +1,4 @@
-extends "res://scenes/mob.gd"
+extends "res://scenes/mobs/mob.gd"
 
 const TIME_PERIOD = 1.0 # In seconds
 const ACCELERATION_FACTOR = 15

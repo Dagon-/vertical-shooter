@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/weapon_blaster.gd" type="Script" id=1]
-[ext_resource path="res://scenes/weapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/weapons/weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/weapons/weapon_blaster.gd" type="Script" id=2]
 [ext_resource path="res://sprites/purple.png" type="Texture" id=3]
 [ext_resource path="res://audio/slimeball.wav" type="AudioStream" id=4]
 
@@ -9,10 +9,10 @@
 radius = 4.03064
 height = 41.3392
 
-[node name="Blaster" instance=ExtResource( 2 )]
+[node name="Blaster" instance=ExtResource( 1 )]
 collision_layer = 32
 collision_mask = 5
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )

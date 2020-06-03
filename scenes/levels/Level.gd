@@ -9,7 +9,7 @@ var Mob1
 func _ready():
 
 	# Load sauser mob
-	Mob1 = load("res://scenes/mob_sprinter.tscn")
+	Mob1 = load("res://scenes/mobs/mob_sprinter.tscn")
 	
 func _process(delta):
 	pass
